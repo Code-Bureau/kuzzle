@@ -81,6 +81,7 @@ Body:
 ### Optional:
 
 - `refresh`: if set to `wait_for`, Kuzzle will not respond until the replacements are indexed
+- `strict`: if set, an error will occur if at least one document has not been replaced <SinceBadge version="auto-version" />
 
 ---
 
@@ -111,6 +112,8 @@ Each errored document is an object of the `errors` array with the following prop
 ::: warning
 Errored documents are not guaranteed to be in the same orded as in the initial request.
 :::
+
+If `strict` mode is enabled, will rather return an error if at least one document has not been replaced.
 
 ```js
 {
